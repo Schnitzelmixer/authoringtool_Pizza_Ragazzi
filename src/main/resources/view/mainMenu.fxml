@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:id="anchorPane" prefHeight="400.0"
+            prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/11.0.1"
+            fx:controller="controller.mainMenuController">
+    <Text id="text" fill="#005e69" layoutX="179.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Pizza Rush Authoring Tool" textAlignment="CENTER" wrappingWidth="242.6923828125">
+        <font>
+            <Font name="System Bold" size="29.0"/>
+        </font>
+    </Text>
+    <VBox alignment="CENTER" layoutX="111.0" layoutY="120.0" prefHeight="218.0" prefWidth="379.0" spacing="20.0"
+          AnchorPane.bottomAnchor="62.0" AnchorPane.leftAnchor="111.0" AnchorPane.rightAnchor="110.0"
+          AnchorPane.topAnchor="120.0">
+        <Button mnemonicParsing="false" onMouseClicked="#buttonUsers" prefHeight="30.0" prefWidth="150.0"
+                text="Users " textAlignment="CENTER"/>
+        <Button mnemonicParsing="false" onMouseClicked="#buttonIngredients" prefHeight="30.0" prefWidth="150.0"
+                text="Ingredients" textAlignment="CENTER"/>
+        <Button mnemonicParsing="false" onMouseClicked="#buttonPizzas" prefHeight="30.0" prefWidth="150.0"
+                text="Pizzas" textAlignment="CENTER"/>
+        <Button mnemonicParsing="false" onMouseClicked="#buttonTier" prefHeight="30.0" prefWidth="150.0"
+                text="Tiers" textAlignment="CENTER"/>
+    </VBox>
+</AnchorPane>

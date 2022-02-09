@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="400.0"
+            maxWidth="600.0" minHeight="400.0"
+            minWidth="600.0" prefHeight="400.0"
+            prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/11.0.1"
+            fx:controller="controller.LoginController">
+    <Label layoutX="176.0" layoutY="22.0" text="Authors Tool" textFill="#005e69" AnchorPane.topAnchor="22.0">
+        <font>
+            <Font name="Arial Bold" size="40.0"/>
+        </font>
+    </Label>
+    <TextField fx:id="host" disable="true" layoutX="150.0" layoutY="101.0" prefWidth="300.0"
+               promptText="Database Server" text="cypher.informatik.uni-wuerzburg.de:38336"
+               AnchorPane.bottomAnchor="268.0"/>
+    <TextField fx:id="database" layoutX="150.0" layoutY="161.0" prefWidth="300.0" promptText="Database"
+               text="sopra-2020WS-team01" AnchorPane.bottomAnchor="208.0"/>
+    <TextField fx:id="username" layoutX="150.0" layoutY="221.0" prefWidth="300.0" promptText="Username"
+               text="sopra-2020WS-team01" AnchorPane.bottomAnchor="148.0"/>
+    <PasswordField fx:id="password" layoutX="150.0" layoutY="281.0" prefWidth="300.0" promptText="Password"
+                   AnchorPane.bottomAnchor="88.0"/>
+    <Button layoutX="201.0" layoutY="344.0" mnemonicParsing="false" onMouseClicked="#login" prefWidth="200.0"
+            styleClass="bluebutton" text="Login" AnchorPane.bottomAnchor="25.0"/>
+    <Label disable="true" layoutX="114.0" layoutY="106.0" text="URL:" AnchorPane.bottomAnchor="273.0"/>
+    <Label layoutX="86.0" layoutY="166.0" text="Schema:" AnchorPane.bottomAnchor="213.0"/>
+    <Label layoutX="72.0" layoutY="226.0" text="Username:" AnchorPane.bottomAnchor="153.0"/>
+    <Label layoutX="74.0" layoutY="286.0" text="Password:" AnchorPane.bottomAnchor="93.0"/>
+</AnchorPane>

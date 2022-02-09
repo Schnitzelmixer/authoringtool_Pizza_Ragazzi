@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="anchorPane" minHeight="-Infinity" minWidth="-Infinity"
+            xmlns="http://javafx.com/javafx/11.0.1" fx:controller="controller.IngredientDataController">
+    <VBox prefHeight="500.0" prefWidth="750.0">
+        <ToolBar minWidth="-Infinity" prefHeight="40.0">
+            <Button fx:id="back_to_menu" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#goBack"
+                    text="Back to Menu"/>
+
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <Button fx:id="ingredient_delete_button" alignment="BASELINE_RIGHT" mnemonicParsing="false"
+                    onMouseClicked="#deleteIngredient" text="Delete" visible="false"/>
+            <Button fx:id="ingredient_new" alignment="BASELINE_RIGHT" mnemonicParsing="false"
+                    onMouseClicked="#newIngredient" text="New Ingredient"/>
+            <Separator/>
+            <Button fx:id="ingredient_refresh" alignment="BASELINE_RIGHT" mnemonicParsing="false"
+                    onMouseClicked="#refreshData" text="Refresh"/>
+
+        </ToolBar>
+        <HBox>
+            <VBox HBox.hgrow="ALWAYS">
+                <Label prefHeight="50.0" style="-fx-font-size: 20; -fx-translate-x: 5;" text="All Ingredients"/>
+
+                <TableView fx:id="table_ingredient" editable="true" onMouseClicked="#ingredientSelected"
+                           prefHeight="400.0" prefWidth="200.0">
+                    <columns>
+                        <TableColumn fx:id="column_idIngredient" prefWidth="60.0" text="Id"/>
+                        <TableColumn fx:id="column_ingredientName" prefWidth="110.0" text="Name"/>
+                        <TableColumn fx:id="column_idTier" prefWidth="40.0" text="Tier"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <VBox prefWidth="490" HBox.hgrow="ALWAYS">
+                <!--all Ingredient pictures together with Flight Behavior, wack a mole, Memory, Tier-->
+                <Label fx:id="ingredient_selected_label" prefHeight="50.0"
+                       style="-fx-font-size: 20; -fx-translate-x: 5;" text="No Ingredient Selected"/>
+
+
+                <TabPane fx:id="tab_pane" prefHeight="250.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                    <Tab text="Pictures">
+                        <HBox alignment="BASELINE_LEFT" prefHeight="321.0" prefWidth="490.0">
+
+                            <VBox alignment="CENTER">
+                                <Label prefHeight="35.0" text="Raw:"/>
+                                <Button fx:id="buttonPictureRaw" text="Import Picture"/>
+                                <ImageView fx:id="imageRaw" fitHeight="90.0" fitWidth="90.0" preserveRatio="true">
+                                    <VBox.margin>
+                                        <Insets top="15.0"/>
+                                    </VBox.margin>
+                                </ImageView>
+                                <HBox.margin>
+                                    <Insets left="7.0" right="7.0"/>
+                                </HBox.margin>
+                            </VBox>
+
+                            <VBox alignment="CENTER">
+                                <Label prefHeight="35.0" text="Distractor:"/>
+                                <Button fx:id="buttonPictureDistraction" text="Import Picture"/>
+                                <ImageView fx:id="imageDistraction" fitHeight="90.0" fitWidth="90.0"
+                                           preserveRatio="true">
+                                    <VBox.margin>
+                                        <Insets top="15.0"/>
+                                    </VBox.margin>
+                                </ImageView>
+                                <HBox.margin>
+                                    <Insets right="7.0"/>
+                                </HBox.margin>
+                            </VBox>
+
+                            <VBox alignment="CENTER">
+                                <Label prefHeight="35.0" text="Processed:"/>
+                                <Button fx:id="buttonPictureProcessed" text="Import Picture"/>
+                                <ImageView fx:id="imageProcessed" fitHeight="90.0" fitWidth="90.0" preserveRatio="true">
+                                    <VBox.margin>
+                                        <Insets top="15.0"/>
+                                    </VBox.margin>
+                                </ImageView>
+                                <HBox.margin>
+                                    <Insets right="7.0"/>
+                                </HBox.margin>
+                            </VBox>
+
+                            <VBox alignment="CENTER">
+                                <Label prefHeight="35.0" text="Baked:"/>
+                                <Button fx:id="buttonPictureBaked" text="Import Picture"/>
+                                <ImageView fx:id="imageBaked" fitHeight="90.0" fitWidth="90.0" preserveRatio="true">
+                                    <VBox.margin>
+                                        <Insets top="15.0"/>
+                                    </VBox.margin>
+                                </ImageView>
+                                <HBox.margin>
+                                    <Insets right="7.0"/>
+                                </HBox.margin>
+                            </VBox>
+
+                            <VBox alignment="CENTER">
+                                <Label prefHeight="35.0" text="Burned:"/>
+                                <Button fx:id="buttonPictureBurned" text="Import Picture"/>
+                                <ImageView fx:id="imageBurned" fitHeight="90.0" fitWidth="90.0" preserveRatio="true">
+                                    <VBox.margin>
+                                        <Insets top="15.0"/>
+                                    </VBox.margin>
+                                </ImageView>
+                                <HBox.margin>
+                                    <Insets right="7.0"/>
+                                </HBox.margin>
+                            </VBox>
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                            <padding>
+                                <Insets top="10.0"/>
+                            </padding>
+                        </HBox>
+                    </Tab>
+
+                    <Tab text="Memory">
+                        <VBox>
+                            <GridPane fx:id="memoryGridPane" vgap="10.0">
+                                <VBox.margin>
+                                    <Insets bottom="10.0"/>
+                                </VBox.margin>
+                            </GridPane>
+                            <Button onMouseClicked="#newDescription" text="add"/>
+                            <padding>
+                                <Insets left="10.0" top="10.0"/>
+                            </padding>
+                        </VBox>
+                    </Tab>
+
+                    <Tab text="Specific Behavior">
+                        <VBox>
+                            <Region prefHeight="5"/>
+                            <GridPane fx:id="specificGridPane"/>
+                        </VBox>
+                    </Tab>
+
+                </TabPane>
+                <HBox.margin>
+                    <Insets left="7.0"/>
+                </HBox.margin>
+            </VBox>
+            <VBox.margin>
+                <Insets bottom="7.0" left="7.0" right="7.0" top="7.0"/>
+            </VBox.margin>
+        </HBox>
+    </VBox>
+</AnchorPane>

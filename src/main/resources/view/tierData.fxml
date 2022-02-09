@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:id="anchorPane"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="controller.tierDataController"
+            prefHeight="400.0" prefWidth="600.0">
+    <VBox>
+        <ToolBar minWidth="600" prefHeight="40.0">
+            <Button fx:id="button_menu" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#goBack"
+                    text="Back to Menu"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button fx:id="tier_delete_button" mnemonicParsing="false" text="Delete Selected"
+                    visible="false" onMouseClicked="#deleteSelectedTier"/>
+            <Button fx:id="tier_new" mnemonicParsing="false" text="New Tier"
+                    onMouseClicked="#createNewTier"/>
+            <Separator/>
+            <Button fx:id="tier_refresh" mnemonicParsing="false" text="Refresh"
+                    onMouseClicked="#refreshData"/>
+        </ToolBar>
+        <HBox>
+            <VBox HBox.hgrow="ALWAYS">
+                <Label prefHeight="50.0" style="-fx-font-size: 20; -fx-translate-x: 5;"
+                       text="All Tiers"/>
+
+                <TableView fx:id="table_tier" editable="true" onMouseClicked="#tierSelected">
+                    <columns>
+                        <TableColumn fx:id="column_tier_id" text="id / level"/>
+                        <TableColumn fx:id="column_tier_name" text="name"/>
+                        <TableColumn fx:id="column_tier_points" text="points to unlock" prefWidth="100.0"/>
+                    </columns>
+                </TableView>
+            </VBox>
+            <Region prefWidth="10"/>
+            <VBox HBox.hgrow="ALWAYS">
+                <Label fx:id="tier_selected_label" prefHeight="50.0" style="-fx-font-size: 20; -fx-translate-x: 5;"
+                       text="No Tier Selected"/>
+            </VBox>
+        </HBox>
+    </VBox>
+</AnchorPane>

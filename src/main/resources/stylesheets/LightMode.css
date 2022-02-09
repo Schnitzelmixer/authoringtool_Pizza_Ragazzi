@@ -1,0 +1,45 @@
+/*TODO some of the css works and some does not, fix it if time is available*/
+.root {
+    -fx-font-size: 14px;
+    -fx-font-family: sans-serif;
+    -fx-background-color: #ffffff;
+}
+
+.header-section {
+    -fx-padding: 10px;
+    -fx-font-size: 20px;
+    -fx-background-color: teal;
+}
+
+.header-section Label {
+    -fx-text-fill: #2698ff;
+    -fx-padding: 10px;
+}
+
+.anchor-pane {
+    -fx-background-color: #ff0000;
+}
+
+.border-pane {
+    -fx-background-color: #ffe52a;
+}
+
+
+/*menu*/
+
+button {
+    height: 100px;
+    width: 500px;
+    margin: 25px;
+    /*border: 4px black solid;*/
+    background-color: white;
+}
+
+.button:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.bluebutton {
+}

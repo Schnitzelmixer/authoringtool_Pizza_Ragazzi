@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="anchorPane" maxHeight="1.7976931348623157E308"
+            maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity"
+            xmlns="http://javafx.com/javafx/11.0.1" fx:controller="controller.UserDataController">
+    <VBox>
+        <ToolBar minWidth="-Infinity" prefHeight="40.0">
+            <Button fx:id="button_menu" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#goBack"
+                    text="Back to Menu"/>
+            <Label style="-fx-font-size: 20;" text="Users"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onMouseClicked="#deleteUser" prefHeight="25.0"
+                    prefWidth="177.0" text="Delete Selected User"/>
+            <Button fx:id="newButton" mnemonicParsing="false" onMouseClicked="#newUser" prefHeight="25.0"
+                    prefWidth="94.0" text="New User"/>
+            <Separator orientation="VERTICAL" prefHeight="30.0" prefWidth="22.0"/>
+            <Button fx:id="button_refresh" mnemonicParsing="false" onMouseClicked="#refreshData" prefHeight="25.0"
+                    prefWidth="71.0" text="Refresh"/>
+
+        </ToolBar>
+        <HBox>
+            <TableView fx:id="table_users" editable="true" prefWidth="700">
+                <columns>
+                    <TableColumn fx:id="column_idUser" text="IdUser"/>
+                    <TableColumn fx:id="column_username" prefWidth="100.0" text="Username"/>
+                    <TableColumn fx:id="column_email" prefWidth="120.0" text="Email"/>
+                    <TableColumn fx:id="column_password" prefWidth="100.0" text="Password"/>
+                    <TableColumn fx:id="column_totalPoints" prefWidth="100.0" text="Total Points"/>
+                    <TableColumn fx:id="column_highscore" prefWidth="100.0" text="HighScore"/>
+                    <TableColumn fx:id="column_idTier" prefWidth="100.0" text="Current Tier"/>
+                </columns>
+            </TableView>
+            <VBox prefWidth="190.0">
+                <HBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                </HBox.margin>
+                <Label fx:id="labelListView"/>
+                <ListView fx:id="listView_friends" maxWidth="190.0" prefHeight="135.0" prefWidth="190.0">
+                </ListView>
+                <Button fx:id="deleteFriendButton" mnemonicParsing="false" onMouseClicked="#deleteFriend"
+                        prefWidth="190.0" text="Delete Selected Friend"/>
+                <TextField fx:id="addFriendInput" promptText="Enter Username">
+                    <VBox.margin>
+                        <Insets top="10.0"/>
+                    </VBox.margin>
+                </TextField>
+                <Button fx:id="addFriendButton" mnemonicParsing="false" onMouseClicked="#addFriend" prefWidth="190.0"
+                        text="Add Friend">
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                </Button>
+                <Separator prefHeight="17.0" prefWidth="200.0"/>
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <Label text="Profile Picture"/>
+                    <Button fx:id="buttonImportProfilePic" mnemonicParsing="false" text="Import Profile Picture"/>
+                    <Pane prefHeight="11.0" prefWidth="200.0"/>
+                    <ImageView fx:id="imageProfilePic" fitHeight="151.0" fitWidth="200.0" pickOnBounds="true"
+                               preserveRatio="true"/>
+                </VBox>
+            </VBox>
+        </HBox>
+    </VBox>
+</AnchorPane>
